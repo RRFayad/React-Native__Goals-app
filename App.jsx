@@ -12,10 +12,18 @@ export default function App() {
     setGoalsList((prevState) => [...prevState, enteredGoal]);
   };
 
+  const deleteGoalHandler = (index) => {
+    console.log(goalsList);
+    console.log(index);
+    setGoalsList((prevState) =>
+      prevState.filter((goal, goalIndex) => goalIndex !== index)
+    );
+  };
+
   return (
     <View style={styles.appContainer}>
       <GoalInput onAddGoal={addGoalHandler} />
-      <GoalsList goalsList={goalsList} />
+      <GoalsList goalsList={goalsList} onDeleteGoal={deleteGoalHandler} />
     </View>
   );
 }
