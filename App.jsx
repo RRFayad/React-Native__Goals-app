@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, View, Button } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
-import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 import GoalsList from "./components/GoalsList";
 
@@ -24,26 +24,29 @@ export default function App() {
   };
 
   return (
-    <View style={styles.appContainer}>
-      <Button
-        title="Add New Goal"
-        color="#5e0acc"
-        onPress={toggleModalVisibilityHandler}
-      />
-      <GoalInput
-        onAddGoal={addGoalHandler}
-        modalIsVisible={modalIsVisible}
-        onCancel={toggleModalVisibilityHandler}
-      />
-      <GoalsList goalsList={goalsList} onDeleteGoal={deleteGoalHandler} />
-    </View>
+    <>
+      <StatusBar style="light" />
+      <View style={styles.appContainer}>
+        <Button
+          title="Add New Goal"
+          color="#a065ec"
+          onPress={toggleModalVisibilityHandler}
+        />
+        <GoalInput
+          onAddGoal={addGoalHandler}
+          modalIsVisible={modalIsVisible}
+          onCancel={toggleModalVisibilityHandler}
+        />
+        <GoalsList goalsList={goalsList} onDeleteGoal={deleteGoalHandler} />
+      </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    paddingTop: 50,
+    paddingTop: 80,
     paddingHorizontal: 16,
   },
 });
