@@ -57,6 +57,7 @@ function GoalInput({
 const styles = StyleSheet.create({
   inputContainer: {
     paddingLeft: 8,
+    marginTop: -120,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",

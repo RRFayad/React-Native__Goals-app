@@ -15,6 +15,7 @@ export default function App() {
 
   const addGoalHandler = (enteredGoal) => {
     setGoalsList((prevState) => [...prevState, enteredGoal]);
+    toggleModalVisibilityHandler();
   };
 
   const deleteGoalHandler = (index) => {
