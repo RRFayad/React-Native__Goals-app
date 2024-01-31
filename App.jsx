@@ -13,8 +13,6 @@ export default function App() {
   };
 
   const deleteGoalHandler = (index) => {
-    console.log(goalsList);
-    console.log(index);
     setGoalsList((prevState) =>
       prevState.filter((goal, goalIndex) => goalIndex !== index)
     );
